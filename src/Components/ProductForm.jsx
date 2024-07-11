@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import useInventory from '../Hooks/useInventory'; // Adjust the path as per your file structure
+import useInventory from '../Hooks/useInventory';
 
 const ProductForm = () => {
   const { addProduct } = useInventory();
