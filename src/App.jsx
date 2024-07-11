@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import  ContactsContext  from './context/contacts'
-import DisplayContacts from './Components/DisplayContacts';
+import DisplayContacts from './Components/displayContacts';
+import Viewdetails from './Components/viewdetails';
+import useInventory from './Hooks/useInventory';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ProductList from './Components/ProductList';
+import ProductForm from './Components/ProductForm';
 
 
 
@@ -19,10 +24,17 @@ const [selectedContact, setSelectedContact] = useState(null);
 const selectContact= (contact) =>{
   setSelectedContact(contact);
 }
+
+
   return (
     <ContactsContext.Provider value={{ contacts, selectContact, selectedContact }}>
-    <h1>App</h1>
+      <h2>Context Api</h2>
       <DisplayContacts/>
+      <Viewdetails/>
+      <hr></hr>
+      <h2>Custom Hooks</h2>
+      <ProductList/>
+      <ProductForm/>
     </ContactsContext.Provider>
   )
 }

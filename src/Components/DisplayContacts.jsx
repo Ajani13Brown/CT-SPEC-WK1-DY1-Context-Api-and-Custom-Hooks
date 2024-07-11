@@ -1,19 +1,22 @@
 import React, { useContext } from 'react'
-import ContactsContext from '../context/contacts';
+import   ContactsContext  from '../context/contacts';
 
 
 
 const DisplayContacts = () => {
-const [contacts,selectContact] = useContext();
+    const {contacts,selectContact,selectedContact} = useContext(ContactsContext);
   return (
     <div>
-        <h1>Contacts List</h1>
+        <h4>Contacts List</h4>
         <ul>
         {contacts.map((contact,index) => (
-            <li key={index} onclick= {()=>selectContact(contact)}>{contact.name}</li>
+            <li key={index} onClick= {()=>selectContact(contact)}>{contact.name}</li>
         ))}
-        {console.log(selectContact)}
         </ul>
+
+        {selectedContact && (
+        <p>Selected Contact: {selectedContact.name}</p>
+      )}
 
     </div>
   );

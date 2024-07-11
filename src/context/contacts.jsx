@@ -6,4 +6,4 @@ const ContactsContext = createContext({
     selectContact:() =>{}
 })
 
-export default ContactsContext;
+export default ContactsContext
